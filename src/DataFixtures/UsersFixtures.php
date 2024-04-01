@@ -4,6 +4,9 @@ namespace App\DataFixtures;
 
 use Faker;
 use App\Entity\Users;
+use App\DataFixtures\CitiesFixtures;
+use App\DataFixtures\GroupsFixtures;
+use App\DataFixtures\CountriesFixtures;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -31,11 +34,10 @@ class UsersFixtures extends Fixture implements DependentFixtureInterface
 
             //Récupération de la référence à l'objet city.
             //Application d'une référence aléatoire entre le pays 1 à 20.
-            $city = $this->getReference('city' . rand(1, 20));
+            $idCity = $this->getReference('city-' . rand(1, 20));
             
             //Récupération de l'id d'une ville
-            $user->setIdCity($city);
-
+            $user->setIdCity($idCity);
             //Création d'une référence à l'objet user
             $this->setReference('user-' . $usr, $user);
 

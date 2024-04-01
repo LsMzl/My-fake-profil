@@ -9,12 +9,12 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Liste des pays</h1>
 
-    This friendly message is coming from:
     <ul>
-        <li>Your controller at <code>/opt/lampp/htdocs/my-fake-profil/src/Controller/CountriesController.php</code></li>
-        <li>Your template at <code>/opt/lampp/htdocs/my-fake-profil/templates/countries/index.html.twig</code></li>
+    {% for country in countries %}
+        <li><a href="{{ path( 'id_country', {id: country.id} ) }}">{{country.id}} - {{country.name}}</a></li>        
     </ul>
+    {% endfor %} 
 </div>
 {% endblock %}

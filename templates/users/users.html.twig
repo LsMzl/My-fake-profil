@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GroupsController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+    <h1><text-center>Liste des utilisateurs</h1>
+
+    <table border="1px">
+        <caption>Liste des utilisateurs</caption>
+        <thead>
+            <tr>
+                <th>Identifiant</th>
+                <th>Pays</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Date de naissance</th>
+                <th>Profession</th>
+                <th>Intro</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tr>
+            {% for user in users %}
+                <td>{{ user.id }}</td>                      
+                <td>{{ user.getIdCity.name }}</td> 
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.birth|date("d.m.Y") }}</td>
+                <td>{{ user.profession }}</td>
+                <td>{{ user.intro }}</td>
+                <td>{{ user.description }}</td>
+        </tr>
+            {% endfor %} 
+    </table>
+    
+
+{% endblock %}

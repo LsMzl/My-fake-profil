@@ -4,8 +4,7 @@ namespace App\DataFixtures;
 
 use Faker;
 use App\Entity\Cities;
-use App\Entity\Countries;
-use App\Entity\Groups;
+use App\DataFixtures\CountriesFixtures;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -23,15 +22,14 @@ class CitiesFixtures extends Fixture implements DependentFixtureInterface
 
             //Définition du nom du pays grâce à FakerPHP.
             //Le nom du pays comprendrant entre 5 et 25 caractères.
-            $city->setName($faker->text(5, 25));
+            $city->setName($faker->word);
 
             //Récupération de la référence à l'objet country.
             //Application d'une référence aléatoire entre le pays 1 à 20.
-            $country = $this->getReference('country' . rand(1, 19));
+            $idCountry = $this->getReference('country-' . rand(1, 20));
 
             //Ajout de l'id d'un pays grâce à la référence à l'objet country.
-            $city->setIdCountry($country);
-
+            $city->setIdCountry($idCountry);
             //Création d'une référence à l'objet city.
             $this->setReference('city-' . $cty, $city);
 
@@ -46,7 +44,6 @@ class CitiesFixtures extends Fixture implements DependentFixtureInterface
     public function getDependencies(): array
     {
         return [
-            GroupsFixtures::class,
             CountriesFixtures::class
         ];
     }

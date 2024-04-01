@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use Faker;
 use App\Entity\Countries;
+use App\DataFixtures\GroupsFixtures;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -21,14 +22,13 @@ class CountriesFixtures extends Fixture implements DependentFixtureInterface
 
             //Définition du nom du pays grâce à FakerPHP
             //Le nom du pays comprendrant entre 5 et 12 caractères
-            $country->setName($faker->text(5, 12));
-
-
-            //Création d'une référence à l'objet country
-            $this->setReference('country-' . $cntr, $country);
+            $country->setName($faker->word);
 
             //Persistance des données
             $manager->persist($country);
+
+            //Création d'une référence à l'objet country
+            $this->addReference('country-' . $cntr, $country);
         }
 
         //Envoi des données sur la base de données
