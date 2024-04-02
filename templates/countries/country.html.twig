@@ -10,5 +10,12 @@
 
 <div class="example-wrapper">
     <h1>Pays n°{{country.id }}: {{country.name}}</h1>
+    <h2>Villes appartenant à {{country.name}}:</h2>
+
+    <ul>
+    {% for city in country.getCities %}
+        <li><a href="{{ path( 'id_city', {id: city.id} ) }}">{{city.name}}</a></li>
+    {% endfor %}
+    </ul>
 </div>
 {% endblock %}

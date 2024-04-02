@@ -1,3 +1,36 @@
-body {
-    background-color: skyblue;
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover{
+  color: red;
+}
+li{
+  list-style: none;
+}
+
+table{
+  border: 1px solid blue;
+}
+
+table tr:nth-child(even){
+  background-color: rgb(207, 240, 241);
+}
+
+table caption{
+  font-size: 30px;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  font-size: 22px;
+  padding: 20px;
 }

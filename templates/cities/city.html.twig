@@ -10,6 +10,10 @@
 
 <div class="example-wrapper">
     <h1>Ville n°{{city.id }}: {{city.name}}</h1>
+    <h2>Utilisateurs résidant à {{city.name}}:</h2>
+        {% for user in city.getUsers %}
+        <li><a href="">{{user.firstname}} {{user.lastname}}</a></li>
+    {% endfor %}
 
     <p></p>
 </div>

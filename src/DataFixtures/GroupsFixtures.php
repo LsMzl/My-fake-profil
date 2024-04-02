@@ -21,7 +21,7 @@ class GroupsFixtures extends Fixture
 
             //Définition du nom du groupe grâce à FakerPHP.
             //Le nom du pays comprendrant entre 5 et 20 caractères.
-            $group->setName($faker->word);
+            $group->setName($faker->company);
 
             //Création d'une référence à l'objet Groups.
             $this->setReference('group-' . $grp, $group);
