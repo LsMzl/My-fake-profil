@@ -9,7 +9,28 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello </h1>
+    <h1>Générateur de faux profils</h1>
+    <br>
+    <p>Projet visant à générer de faux profils grâce à FakerPhp.</p>
+    <br>
+    <p>Création et affichage de données aléatoires pour les entités Users, Cities, Countries & Groups.</p>
+    <br>
+    <ul>
+        <li>Chaque <a href="{{ path( 'app_groups') }}" class="link_intro">groupe</a> contient plusieurs utilisateurs.</li>
+        <li>Chaque <a href="{{ path( 'app_countries') }}" class="link_intro">pays</a> contient plusieurs villes.</li>
+        <li>Chaque <a href="{{ path( 'app_cities') }}" class="link_intro">ville</a> appartient à un seul pays et contient plusieurs utilisateurs.</li>
+        <li>Chaque <a href="{{ path( 'app_users') }}" class="link_intro">utilisateur</a> réside dans une seule ville et contient les informations suivantes:</li>
+        <ol>
+            <li>- Nom</li>
+            <li>- Prénom</li>
+            <li>- Mail</li>
+            <li>- Date de naissance</li>
+            <li>- Profession</li>
+            <li>- Ville</li>
+            <li>- Intro</li>
+            <li>- Description</li>
+        </ol>
+    </ul>
 
 </div>
 {% endblock %}
