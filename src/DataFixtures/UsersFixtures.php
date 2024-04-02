@@ -27,9 +27,9 @@ class UsersFixtures extends Fixture implements DependentFixtureInterface
                 ->setlastName($faker->lastName)
                 ->setEmail($faker->email)
                 ->setBirth($faker->dateTime())
-                ->setProfession($faker->text(10, 25))
-                ->setIntro($faker->text(100))
-                ->setDescription($faker->text(200));
+                ->setProfession($faker->jobTitle())
+                ->setIntro($faker->realText(100))
+                ->setDescription($faker->realTextBetween(150, 300));
 
 
             //Récupération de la référence à l'objet city.

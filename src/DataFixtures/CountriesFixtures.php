@@ -22,7 +22,7 @@ class CountriesFixtures extends Fixture implements DependentFixtureInterface
 
             //Définition du nom du pays grâce à FakerPHP
             //Le nom du pays comprendrant entre 5 et 12 caractères
-            $country->setName($faker->word);
+            $country->setName($faker->country);
 
             //Persistance des données
             $manager->persist($country);

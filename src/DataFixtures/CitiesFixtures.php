@@ -22,7 +22,7 @@ class CitiesFixtures extends Fixture implements DependentFixtureInterface
 
             //Définition du nom du pays grâce à FakerPHP.
             //Le nom du pays comprendrant entre 5 et 25 caractères.
-            $city->setName($faker->word);
+            $city->setName($faker->city);
 
             //Récupération de la référence à l'objet country.
             //Application d'une référence aléatoire entre le pays 1 à 20.
