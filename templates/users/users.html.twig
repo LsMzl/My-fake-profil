@@ -8,9 +8,6 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-
-    <h1><text-center>Liste des utilisateurs</h1>
-
     <table border="1px">
         <caption>Liste des utilisateurs ({{ users|length }})</caption>
         <thead>
@@ -30,7 +27,7 @@
             {% for user in users %}
                 <td>{{ user.id }}</td>                      
                 <td>{{ user.getIdCity.name }}</td> 
-                <td>{{ user.lastname }}</td>
+                <td>{{ user.lastname|upper }}</td>
                 <td>{{ user.firstname }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.birth|date("d.m.Y") }}</td>
